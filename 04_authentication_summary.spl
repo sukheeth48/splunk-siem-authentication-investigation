@@ -1,0 +1,7 @@
+index=YOUR_ACCESSIBLE_INDEX earliest=-7d (EventCode=4624 OR EventID=4624 OR EventCode=4625 OR EventID=4625)
+| eval event_id=coalesce(EventCode, EventID)
+| eval outcome=if(event_id=4625, "failure", if(event_id=4624, "success", "other"))
+| eval account=coalesce(user, TargetUserName, Account_Name, dest_user)
+| eval source_ip=coalesce(src_ip, src, Source_Network_Address, IpAddress, SourceAddress)
+| stats count as events values(outcome) as outcomes values(host) as hosts by account source_ip
+| sort - events

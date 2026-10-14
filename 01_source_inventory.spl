@@ -1,0 +1,3 @@
+index=YOUR_ACCESSIBLE_INDEX earliest=-24h
+| stats count by host sourcetype
+| sort - count

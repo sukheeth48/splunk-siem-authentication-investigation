@@ -1,0 +1,7 @@
+timestamp,host,account,source_ip,event_id,outcome,notes
+2026-09-15T09:01:00Z,WIN-TEST-01,alex,198.51.100.23,4625,failure,SYNTHETIC example only
+2026-09-15T09:01:20Z,WIN-TEST-01,alex,198.51.100.23,4625,failure,SYNTHETIC example only
+2026-09-15T09:01:45Z,WIN-TEST-01,alex,198.51.100.23,4625,failure,SYNTHETIC example only
+2026-09-15T09:02:10Z,WIN-TEST-01,alex,198.51.100.23,4625,failure,SYNTHETIC example only
+2026-09-15T09:03:00Z,WIN-TEST-01,alex,198.51.100.23,4624,success,SYNTHETIC example only
+2026-09-15T09:12:00Z,WIN-TEST-01,alex,192.0.2.10,4624,success,SYNTHETIC example only

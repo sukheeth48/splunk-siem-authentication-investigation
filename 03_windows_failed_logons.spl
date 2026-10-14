@@ -1,0 +1,7 @@
+index=YOUR_ACCESSIBLE_INDEX earliest=-7d (EventCode=4625 OR EventID=4625)
+| eval event_id=coalesce(EventCode, EventID)
+| eval account=coalesce(user, TargetUserName, Account_Name, dest_user)
+| eval source_ip=coalesce(src_ip, src, Source_Network_Address, IpAddress, SourceAddress)
+| stats count as failed_logons min(_time) as first_seen max(_time) as last_seen values(host) as hosts values(sourcetype) as sourcetypes by source_ip account
+| convert ctime(first_seen) ctime(last_seen)
+| sort - failed_logons
